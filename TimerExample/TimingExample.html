@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example showing the usage of setInterval method</title>
+
+    <style type="text/css">
+        .timeDisplayer {
+            width: 200px;
+            height: 100px;
+            margin: auto;
+            text-align: center;
+            background-color: darkolivegreen;
+            color: #FFFFFF;
+        }
+    </style>
+
+    <script type="text/javascript" src="MyTimer.js"></script>
+    <script type="text/javascript">
+
+        var timer = new MyTimer(update, 1000);
+
+        function start() {
+            timer.startTimer();
+        }
+
+        function stop() {
+            timer.stopTimer();
+        }
+
+        function update() {
+            var timerText = document.getElementById("timeText");
+            timerText.innerHTML = new Date().toLocaleTimeString();
+        }
+
+    </script>
+
+
+</head>
+<body onload="start()">
+
+<div class="timeDisplayer">
+    <span id="timeText">
+    </span> <br>
+    <input type="button" value="START" onclick="start()">
+    <input type="button" value="STOP" onclick="stop()">
+</div>
+
+</body>
+</html>
